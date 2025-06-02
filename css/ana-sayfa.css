@@ -1,0 +1,119 @@
+/* Ana sayfadaki öğelerin temel düzen ve boyutlandırma stilleri */
+
+.hero-section {
+    background-color: #8B4513; /* Ana kahverengi arka plan */
+    color: white; /* Metin rengi (style.css tarafından dark mode'da override edilecek) */
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+/* "Menüye Göz At" butonunun açık moddaki rengi (Görseldeki gibi sarı) */
+.hero-buttons .online-order {
+    background-color: var(--secondary-color); /* Sarı */
+    color: var(--primary-color); /* Koyu Kahverengi */
+}
+
+.hero-buttons .online-order:hover {
+    background-color: #e0a800; /* biraz daha koyu sarı */
+}
+
+/* "Self Servis Sipariş Ver" butonunun açık moddaki rengi (Görseldeki gibi gri/koyu metin) */
+.hero-buttons .self-service-order {
+    background-color: #c4c4c4; /* Gri */
+    color: #333; /* Koyu Metin */
+    margin-left: 15px;
+}
+
+.hero-buttons .self-service-order:hover {
+    background-color: #a0a0a0; /* Hover rengi biraz daha koyu gri */
+}
+
+
+.popular-items-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.popular-items-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color); /* Açık modda kahverengi başlık */
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.item-card {
+    background-color: var(--background-color-section); /* style.css'teki değişken */
+    border: 1px solid var(--border-color); /* style.css'teki değişken */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.item-card img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.item-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color); /* Açık modda kahverengi başlık */
+    margin-bottom: 10px;
+}
+
+.item-card .add-to-cart-btn {
+    background-color: #c4c4c4; /* Gri yapıldı */
+    color: #333; /* Koyu Metin yapıldı */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.item-card .add-to-cart-btn:hover {
+    background-color: #a0a0a0; /* Hover rengi biraz daha koyu gri */
+}

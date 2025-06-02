@@ -1,0 +1,104 @@
+.campaigns-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.campaigns-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+.campaign-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.campaign-card {
+    background-color: var(--background-color-section); /* style.css'deki yeni değişken */
+    border: 1px solid var(--border-color); /* style.css'deki yeni değişken */
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.campaign-card .campaign-image {
+    flex-shrink: 0;
+}
+
+.campaign-card .campaign-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.campaign-details {
+    flex-grow: 1;
+}
+
+.campaign-details h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 10px;
+}
+
+.campaign-details .date-range {
+    font-size: 1rem;
+    color: var(--text-color-secondary); /* style.css tarafından override edilecek */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.campaign-details p {
+    font-size: 1.05rem;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.campaign-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    font-size: 1rem;
+}
+
+.campaign-details ul li {
+    margin-bottom: 5px;
+}
+
+/* Dark mode specific styles for kampanyalar.css */
+/* Bu kısımdaki kurallar style.css'teki genel dark mode kuralları tarafından yönetilecek. */
+body.dark-mode .campaigns-section h1,
+body.dark-mode .campaign-card h2 {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .campaign-card {
+    background-color: var(--background-color-section) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .campaign-details .date-range {
+    color: var(--text-color-secondary) !important;
+}
+
+body.dark-mode .campaign-details p,
+body.dark-mode .campaign-details ul,
+body.dark-mode .campaign-details ul li {
+    color: var(--text-color-primary) !important;
+}

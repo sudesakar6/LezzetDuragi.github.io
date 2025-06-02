@@ -1,0 +1,132 @@
+.about-us-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-us-section .section-title {
+    font-size: 3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+.about-content {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    margin-bottom: 20px;
+}
+
+.quality-policy {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.quality-policy .policy-title {
+    font-size: 2.5rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+.policy-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.policy-card {
+    background-color: var(--background-color-section); /* style.css'deki yeni değişken */
+    border: 1px solid var(--border-color); /* style.css'deki yeni değişken */
+    border-radius: 10px;
+    padding: 25px;
+    width: calc(33% - 20px); /* 3 kart yan yana */
+    min-width: 280px; /* Küçük ekranlarda esneklik */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.policy-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.policy-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 10px;
+}
+
+.policy-card p {
+    font-size: 1rem;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    line-height: 1.6;
+}
+
+.branches-link-container {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.branches-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Açık modda beyaz/açık */
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.branches-link i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.branches-link:hover {
+    background-color: #5a2e00;
+    transform: translateY(-3px);
+}
+
+/* Dark mode specific styles for hakkimizda.css */
+/* Bu kısımdaki kurallar style.css'teki genel dark mode kuralları tarafından yönetilecek. */
+body.dark-mode .about-us-section .section-title,
+body.dark-mode .about-content h2,
+body.dark-mode .quality-policy .policy-title,
+body.dark-mode .policy-card h3 {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .about-content p,
+body.dark-mode .policy-card p {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .policy-card {
+    background-color: var(--background-color-section) !important;
+    border-color: var(--border-color) !important;
+}

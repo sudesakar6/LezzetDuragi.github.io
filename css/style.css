@@ -1,0 +1,594 @@
+:root {
+    --primary-color: #6F4E37; /* Kahve Kahverengisi */
+    --secondary-color: #FFD700; /* Altın Sarısı */
+
+    /* Açık mod için varsayılan renkler */
+    --text-color-primary: #333; 
+    --text-color-secondary: #555; 
+    --text-color-light: #f4f4f4; 
+
+    --background-color-page: #f4f4f4; 
+    --background-color-section: #fff; 
+    --border-color: #ddd; 
+    --input-background: #fff; 
+    --input-text-color: #333; 
+}
+
+/* Dark mode (Koyu Moda Özel Renkler) */
+body.dark-mode {
+    --text-color-primary: #f4f4f4; 
+    --text-color-secondary: #ccc; 
+    --text-color-light: #333; 
+
+    --background-color-page: #333; 
+    --background-color-section: #444; 
+    --border-color: #555; 
+    --input-background: #555; 
+    --input-text-color: #f4f4f4; 
+
+    color: var(--text-color-primary) !important; 
+    background-color: var(--background-color-page) !important; 
+
+
+    .header, .footer {
+        background-color: var(--primary-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+    .header .navbar .logo,
+    .header .nav-links a,
+    .header .auth-buttons .cart-icon,
+    .header .theme-toggle,
+    .header .profile-icon-container .profile-icon {
+        color: var(--text-color-primary) !important;
+    }
+    .auth-buttons .btn {
+        background-color: var(--secondary-color) !important;
+        color: var(--primary-color) !important;
+    }
+    .auth-buttons .btn:hover {
+        background-color: #e0a800 !important;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--secondary-color) !important;
+    }
+    .footer-link {
+        color: var(--text-color-primary) !important;
+    }
+    .footer-link:hover {
+        color: var(--secondary-color) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-color-primary) !important;
+    }
+    p, span, li, a:not(.btn) {
+        color: var(--text-color-primary) !important;
+    }
+    .hero-section {
+        background-color: var(--primary-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+    .item-card, .menu-item-card, .policy-card, .campaign-card,
+    .contact-info, .contact-form-container, .branch-card,
+    .register-form, .login-form-container, .overview-card,
+    .panel-content, .order-card, .report-card, .menu-management-item-card,
+    .cart-item, .cart-summary, .profile-dropdown {
+        background-color: var(--background-color-section) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+
+    .price-per-item, .report-meta, .campaign-details .date-range,
+    .overview-card ul li, .overview-card p, .profile-dropdown p {
+        color: var(--text-color-secondary) !important;
+    }
+    .campaign-details ul li {
+        color: var(--text-color-secondary) !important;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"],
+    input[type="date"], input[type="password"], textarea {
+        background-color: var(--input-background) !important;
+        border-color: var(--border-color) !important;
+        color: var(--input-text-color) !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: var(--text-color-secondary) !important;
+        opacity: 0.8 !important;
+    }
+    .gender-options label {
+        background-color: var(--input-background) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+    .gender-options input[type="radio"]:checked + label {
+        background-color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+    .tab-button {
+        background-color: var(--background-color-page) !important;
+        color: var(--text-color-primary) !important;
+        border-color: var(--border-color) !important;
+    }
+    .tab-button.active {
+        background-color: var(--primary-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+    .tab-button:hover:not(.active) {
+        background-color: var(--secondary-color) !important;
+        color: var(--primary-color) !important;
+        border-color: var(--secondary-color) !important;
+    }
+
+    .menu-category h2, .panel-tabs {
+        border-color: var(--border-color) !important;
+    }
+    .menu-category h2 {
+        border-bottom-color: var(--secondary-color) !important;
+    }
+    .panel-tab-button.active {
+        border-bottom-color: var(--secondary-color) !important;
+    }
+    .order-item, .overview-card ul li, .summary-row {
+        border-bottom-color: var(--border-color) !important;
+    }
+    .total-row {
+        border-top-color: var(--border-color) !important;
+    }
+
+    #empty-cart-message, #self-service-orders-list p, #reports-list p, #online-orders-list p {
+        color: var(--text-color-secondary) !important;
+    }
+
+    .modal-content {
+        background-color: var(--background-color-section) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-color-primary) !important;
+    }
+
+    .modal-content h2 {
+        color: var(--text-color-primary) !important;
+    }
+
+    .close-button {
+        color: var(--text-color-primary) !important;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: red !important;
+    }
+
+    body.dark-mode .hero-buttons .self-service-order {
+        background-color: var(--background-color-section) !important; 
+        color: var(--text-color-primary) !important; 
+    }
+
+    body.dark-mode .hero-buttons .self-service-order:hover {
+        background-color: #555 !important; 
+    }
+
+    body.dark-mode .item-card .add-to-cart-btn,
+    body.dark-mode .menu-item-card .add-to-cart-btn { /* Bu kural menu.css'deki butonları da etkiler */
+        background-color: var(--background-color-section) !important; 
+        color: var(--text-color-primary) !important; 
+    }
+
+    body.dark-mode .item-card .add-to-cart-btn:hover,
+    body.dark-mode .menu-item-card .add-to-cart-btn:hover {
+        background-color: #555 !important;
+    }
+
+    body.dark-mode .self-service-quantity-btn { /* menu.css içindeki .self-service-quantity-btn'i de etkiler */
+        background-color: var(--background-color-section) !important; 
+        color: var(--text-color-primary) !important; 
+    }
+
+    body.dark-mode .self-service-quantity-btn:hover {
+        background-color: #555 !important;
+    }
+
+    .modal-cart-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+        background-color: var(--background-color-page);
+        border-top: 1px solid var(--border-color);
+        margin-top: 20px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .modal-total-label {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .modal-total-amount {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .modal-cart-summary .checkout-btn {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    body.dark-mode .modal-cart-summary {
+        background-color: var(--background-color-section) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    body.dark-mode .modal-total-label,
+    body.dark-mode .modal-total-amount {
+        color: var(--text-color-primary) !important;
+    }
+}
+
+
+/* Genel Sıfırlamalar ve Temel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--background-color-page);
+    color: var(--text-color-primary);
+}
+
+/* Header Stilleri */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #e0a800;
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.cart-icon .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 3px 6px;
+}
+
+.theme-toggle {
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--secondary-color);
+}
+
+.profile-icon-container {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.profile-icon {
+    color: var(--secondary-color);
+    font-size: 2.2rem;
+    vertical-align: middle;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    min-width: 250px;
+    padding: 15px;
+    z-index: 1001;
+    text-align: left;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.profile-icon-container.active .profile-dropdown {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.profile-dropdown p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-color-primary);
+    line-height: 1.4;
+}
+
+.profile-dropdown p strong {
+    color: var(--primary-color);
+}
+
+.profile-dropdown .go-to-profile-btn { 
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .profile-dropdown .go-to-profile-btn { /* Profile Dön butonu için koyu mod metin rengi */
+    color: var(--text-color-primary);
+}
+.profile-dropdown .go-to-profile-btn:hover {
+    background-color: #5a2e00; 
+}
+
+.profile-dropdown .logout-btn {
+    display: block;
+    width: 100%;
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px; /* go-to-profile-btn'den sonraki boşluk için ayarlandı */
+    transition: background-color 0.3s ease;
+}
+
+.profile-dropdown .logout-btn:hover {
+    background-color: #c82333;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--background-color-section);
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px; 
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    color: var(--text-color-primary);
+}
+
+.close-button {
+    color: var(--text-color-primary); 
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: red; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color); 
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Self Servis Modalı içindeki ürün resimleri için özel stil */
+#self-service-modal .menu-item-card img {
+    width: 100px;      
+    height: 100px;     
+    object-fit: cover; 
+    border-radius: 8px;
+    flex-shrink: 0;    /* Resmin küçülmemesini sağlar */
+    margin: 0;         /* Önceki margin'leri sıfırla, flex hizalaması halledecek */
+}
+
+/* Self Servis Modalı - Ürün Kartı Genel Düzeni (YENİ EKLENEN) */
+#self-service-modal .menu-item-card {
+    display: flex;            
+    flex-direction: row;     
+    align-items: center;     
+    text-align: left;        
+    gap: 15px;               
+    padding: 15px;           
+    margin-bottom: 20px;      
+}
+
+/* Self Servis Modalı - Ürün Detayları Sütunu (YENİ EKLENEN) */
+#self-service-modal .menu-item-details-column {
+    flex-grow: 1;            
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+}
+
+/* Self Servis Modalı - Ürün Adı (YENİ EKLENEN) */
+#self-service-modal .menu-item-card h4 {
+    font-size: 1.1rem;       
+    margin-bottom: 5px;      
+    /* renk vs. style.css veya menu.css'den miras alınır */
+}
+
+/* Self Servis Modalı - Ürün Fiyatı (YENİ EKLENEN) */
+#self-service-modal .menu-item-card .price {
+    font-size: 1rem;         
+    font-weight: bold;
+    margin-bottom: 10px;     
+    /* renk vs. style.css veya menu.css'den miras alınır */
+}
+
+/* Self Servis Modalı - Miktar Kontrolleri (YENİ EKLENEN) */
+#self-service-modal .self-service-item-controls {
+    display: flex;           
+    align-items: center;     
+    justify-content: flex-start; 
+    gap: 8px;                
+    margin-top: 0;           
+}
+/* css/style.css dosyasının sonuna eklenecek */
+
+/* Self Servis Modalı - Miktar +/- Butonları ve Miktar Göstergesi İyileştirmeleri */
+
+#self-service-modal .self-service-quantity-btn {
+    padding: 5px 10px;   /* Buton içi dolguyu biraz ayarlayarak boyutu değiştirebilirsiniz (mevcut: 6px 10px) */
+    font-size: 1rem;      /* Buton içindeki + / - işaretinin boyutu (mevcut: 1rem) */
+    min-width: 30px;      /* Butonun minimum genişliği */
+    line-height: 1.2;     /* +/- işaretlerinin dikeyde daha iyi ortalanmasına yardımcı olabilir */
+    /* Diğer özellikler (renk, border-radius vb.) menu.css veya style.css'deki mevcut tanımlardan miras alınır */
+}
+
+#self-service-modal .self-service-quantity {
+    font-size: 1.1rem;    /* Miktar sayısının boyutu (mevcut: 1.1rem) */
+    font-weight: bold;    /* (mevcut: bold) */
+    min-width: 30px;      /* Sayı için minimum genişlik, ortalamaya yardımcı olur */
+    padding: 0 5px;       /* Sayının sağına ve soluna biraz boşluk ekleyerek butonlara yapışmasını engeller */
+    text-align: center;   /* (mevcut: center) */
+    line-height: 1.5;     /* Miktar sayısının dikeyde hizalanmasına yardımcı olur */
+    /* Renk gibi özellikler menu.css veya style.css'deki mevcut tanımlardan miras alınır */
+}
+
+/* Butonlara biraz daha belirgin bir hover efekti */
+
+#self-service-modal .self-service-quantity-btn:hover {
+    transform: scale(1.05); 
+}
+
+
