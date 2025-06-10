@@ -1,0 +1,181 @@
+/* Müşteri Paneli Genel Stilleri (Sizin Gönderdiğiniz Temel Stiller) */
+.customer-panel-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.customer-panel-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); 
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    font-size: 1.2rem;
+    color: var(--text-color-primary); 
+    margin-bottom: 40px;
+}
+
+.panel-overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.overview-card {
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.overview-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.overview-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.overview-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+    color: var(--text-color-primary); 
+    font-size: 1rem;
+}
+
+.overview-card ul li:last-child {
+    border-bottom: none;
+}
+
+.btn-sm {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light); 
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Diğer içeriklerden sonra biraz boşluk */
+}
+
+.btn-sm:hover {
+    background-color: #5a2e00;
+}
+
+/* Profil Düzenleme Özelliği İçin Eklenen Stiller */
+#account-details-display {
+    margin-bottom: 15px;
+}
+#account-details-display p { 
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--text-color-secondary);
+}
+#account-details-display p strong {
+    color: var(--text-color-primary);
+    margin-right: 5px;
+}
+
+.profile-edit-modal-content { 
+    max-width: 600px; 
+}
+.profile-edit-modal-content h2 { 
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+body.dark-mode .profile-edit-modal-content h2 {
+    color: var(--secondary-color);
+}
+.profile-edit-modal-content .form-group { margin-bottom: 18px; }
+.profile-edit-modal-content label { display: block; margin-bottom: 6px; font-weight: bold; color: var(--text-color-secondary); }
+.profile-edit-modal-content input[type="text"],
+.profile-edit-modal-content input[type="email"],
+.profile-edit-modal-content input[type="tel"],
+.profile-edit-modal-content input[type="date"] {
+    width: 100%; padding: 10px; border: 1px solid var(--border-color);
+    border-radius: 5px; background-color: var(--input-background);
+    color: var(--input-text-color); font-size: 1rem;
+}
+.profile-edit-modal-content input:focus {
+    border-color: var(--primary-color); outline: none;
+    box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.2); 
+}
+body.dark-mode .profile-edit-modal-content input:focus {
+    box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.3);
+}
+.profile-edit-modal-content .gender-options { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.profile-edit-modal-content .gender-options label { 
+    font-weight: normal; margin-bottom: 0; padding: 8px 12px;
+    border: 1px solid var(--border-color); border-radius: 5px; cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    background-color: var(--input-background); color: var(--input-text-color); 
+}
+.profile-edit-modal-content .gender-options input[type="radio"] { display: none; }
+.profile-edit-modal-content .gender-options input[type="radio"]:checked + label {
+    background-color: var(--primary-color); color: var(--text-color-light);
+    border-color: var(--primary-color);
+}
+body.dark-mode .profile-edit-modal-content .gender-options input[type="radio"]:checked + label {
+    color: var(--text-color-primary); 
+}
+.profile-edit-modal-content .form-actions { margin-top: 25px; display: flex; justify-content: flex-end; gap: 10px; }
+.profile-edit-modal-content .form-actions .btn { padding: 10px 20px; }
+.profile-edit-modal-content .btn-secondary { background-color: #6c757d; color: white; }
+body.dark-mode .profile-edit-modal-content .btn-secondary { background-color: #5a6268; }
+.profile-edit-modal-content .btn-secondary:hover { background-color: #5a6268; opacity: 1; }
+body.dark-mode .profile-edit-modal-content .btn-secondary:hover { background-color: #495057; }
+.profile-edit-modal-content small { font-size: 0.85em; color: var(--text-color-secondary); display: block; margin-top: 4px; }
+.profile-edit-modal-content .warning-text { color: #dc3545; font-weight: bold; }
+.profile-edit-modal-content p.note {
+    font-size: 0.9em; color: var(--text-color-secondary); margin-top: 15px; padding: 10px;
+    background-color: var(--background-color-page); border-left: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+body.dark-mode .profile-edit-modal-content p.note { background-color: var(--input-background); }
+body.dark-mode #account-details-display p { color: var(--text-color-secondary); }
+body.dark-mode #account-details-display p strong { color: var(--text-color-primary); }
+
+/* Paneldeki Mobil Çıkış Butonu Stilleri */
+.logout-btn-panel.mobile-only-logout {
+    display: none; /* Varsayılan olarak gizli (masaüstünde) */
+    width: 100%;
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 20px; 
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn-panel.mobile-only-logout:hover {
+    background-color: #c82333; 
+}
+
+@media (max-width: 768px) { 
+    .logout-btn-panel.mobile-only-logout {
+        display: block; /* Mobil görünümde göster */
+    }
+}

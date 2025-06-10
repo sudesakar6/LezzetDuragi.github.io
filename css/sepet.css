@@ -1,0 +1,183 @@
+/* css/sepet.css (Güncel Hali) */
+
+.cart-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.cart-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+#empty-cart-message {
+    font-size: 1.5rem;
+    color: var(--text-color-secondary); /* style.css tarafından override edilecek */
+    margin-top: 50px;
+}
+
+.cart-item {
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.item-details h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 5px;
+}
+
+.item-details .price-per-item {
+    font-size: 1rem;
+    color: var(--text-color-secondary); /* style.css tarafından override edilecek */
+    margin-bottom: 10px;
+}
+
+.item-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.item-quantity-controls button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Açık modda beyaz/açık */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+}
+
+.item-quantity-controls button:hover {
+    background-color: #5a2e00;
+}
+
+.item-quantity-controls span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    min-width: 30px;
+    text-align: center;
+}
+
+.item-total-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-left: 20px;
+    flex-shrink: 0;
+    min-width: 100px;
+    text-align: right;
+}
+
+.remove-item-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 15px;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    background-color: #c82333;
+}
+
+/* Sepet Özeti */
+.cart-summary {
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: right;
+}
+
+.checkout-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 25px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Dark mode specific styles for sepet.css */
+/* Bu kısımdaki kurallar style.css'teki genel dark mode kuralları tarafından yönetilecek. */
+body.dark-mode .cart-section h1,
+body.dark-mode .cart-item .item-details h3,
+body.dark-mode .item-quantity-controls span,
+body.dark-mode .item-total-price,
+body.dark-mode .summary-row,
+body.dark-mode .total-row {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode #empty-cart-message {
+    color: var(--text-color-secondary) !important;
+}
+
+body.dark-mode .cart-item,
+body.dark-mode .cart-summary {
+    background-color: var(--background-color-section) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .item-details .price-per-item {
+    color: var(--text-color-secondary) !important;
+}
+
+body.dark-mode .summary-row {
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .total-row {
+    border-top-color: var(--border-color) !important;
+}
+
+/*mobil görünüm*/
+
+@media (max-width: 480px) {
+    .cart-section h1 {
+        font-size: 2.2rem;
+    }
+}

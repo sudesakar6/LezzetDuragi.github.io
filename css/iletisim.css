@@ -1,0 +1,196 @@
+.contact-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-info .info-item i {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-right: 15px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.contact-info .info-item div {
+    flex-grow: 1;
+}
+
+.contact-info .info-item h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 5px;
+}
+
+.contact-info .info-item p {
+    font-size: 1.05rem;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+    line-height: 1.5;
+}
+
+.contact-info .social-media {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-info .social-media a {
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    font-size: 2.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info .social-media a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form-container h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--primary-color); /* Açık modda kahverengi */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--input-text-color);
+    background-color: var(--input-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .submit-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color); /* Açık modda kahverengi */
+    color: var(--text-color-light); /* Açık modda beyaz/açık */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #5a2e00;
+    transform: translateY(-2px);
+}
+
+/* Dark mode specific styles for iletisim.css */
+/* Bu kısımdaki kurallar style.css'teki genel dark mode kuralları tarafından yönetilecek. */
+body.dark-mode .contact-section h1 {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .contact-info,
+body.dark-mode .contact-form-container {
+    background-color: var(--background-color-section) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .contact-info .info-item h3 {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .contact-info .info-item p {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .contact-info .social-media a {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .contact-form-container h2 {
+    color: var(--text-color-primary) !important;
+}
+
+/* Düzeltme: Form label'larının koyu modda açık renkte olması */
+body.dark-mode .contact-form label {
+    color: var(--text-color-primary) !important;
+}
+
+/* Düzeltme: Gönder butonunun koyu modda sarı olması */
+body.dark-mode .contact-form .submit-btn {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .contact-form .submit-btn:hover {
+    background-color: #e0a800 !important;
+}

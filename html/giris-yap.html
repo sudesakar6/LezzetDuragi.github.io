@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzet Durağı - Giriş Yap</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/giris-yap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="ana-sayfa.html" class="logo">Lezzet Durağı</a>
+            <button class="hamburger-menu" id="hamburger-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-items-wrapper" id="menu-items-wrapper">
+                <ul class="nav-links">
+                    <li><a href="ana-sayfa.html">Ana Sayfa</a></li>
+                    <li><a href="menu.html">Menü</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="siparislerim.html">Siparişlerim</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="kaydol.html" class="btn auth-btn" id="kaydol-btn">Kaydol</a>
+                    <a href="giris-yap.html" class="btn auth-btn active" id="giris-yap-btn">Giriş Yap</a> 
+                    <a href="sepet.html" class="cart-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-icon-container" id="profile-icon-container" style="display: none;">
+                        <i class="fas fa-user-circle profile-icon"></i>
+                        <div class="profile-dropdown" id="profile-dropdown">
+                            <div id="profile-info-content"></div>
+                            <button id="go-to-profile-btn" class="btn go-to-profile-btn">Profile Dön</button>
+                            <button id="logout-btn" class="btn logout-btn">Çıkış Yap</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <h1>Giriş Yap</h1>
+            <div class="login-tabs">
+                <button class="tab-button active" data-tab="customer">Müşteri Girişi</button>
+                <button class="tab-button" data-tab="personnel">Personel Girişi</button>
+            </div>
+            <div id="customer-login" class="login-form-container active">
+                <h2>Müşteri Girişi</h2>
+                <form id="customer-login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="customerEmail">E-posta</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPassword">Şifre</label>
+                        <input type="password" id="customerPassword" name="customerPassword" required>
+                    </div>
+                    <button type="submit" class="btn login-btn">Giriş Yap</button>
+                    <p class="register-link">Hesabınız yok mu? <a href="kaydol.html">Kaydolun</a></p>
+                </form>
+            </div>
+            <div id="personnel-login" class="login-form-container">
+                <h2>Personel Girişi</h2>
+                <form id="personnel-login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="personnelFullName">Ad Soyad</label>
+                        <input type="text" id="personnelFullName" name="personnelFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="personnelPassword">Şifre</label>
+                        <input type="password" id="personnelPassword" name="personnelPassword" required>
+                    </div>
+                    <button type="submit" class="btn login-btn">Giriş Yap</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="iletisim.html" class="footer-link">Bize Ulaşın</a>
+            <a href="menu.html" class="footer-link">Menü</a>
+        </div>
+        <p>© 2025 Lezzet Durağı Kafe. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Menümüz</h2>
+            <div id="modal-menu-categories"></div>
+        </div>
+    </div>
+    <div id="self-service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Self Servis Sipariş</h2>
+
+            <div class="filter-buttons" id="self-service-filter-container"></div>
+            
+            <div id="self-service-menu-categories"></div>
+
+            <div id="barista-selection-container"></div>
+
+            <div class="modal-cart-summary">
+                <span class="modal-total-label">Sepet Toplamı:</span>
+                <span id="self-service-modal-total" class="modal-total-amount">0.00 TL</span>
+                <button id="place-self-service-order-btn" class="btn checkout-btn">Siparişi Onayla</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/giris-yap.js"></script>
+</body>
+</html>

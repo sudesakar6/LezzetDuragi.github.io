@@ -1,0 +1,176 @@
+.login-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.login-section h1 {
+    font-size: 3rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 40px;
+}
+
+.login-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    background-color: var(--background-color-page);
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    border: 1px solid var(--primary-color);
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Açık modda beyaz/açık */
+}
+
+.tab-button:hover:not(.active) {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+.login-form-container {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: var(--background-color-section);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    display: none;
+}
+
+.login-form-container.active {
+    display: block;
+}
+
+.login-form-container h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-form input[type="email"],
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--input-text-color);
+    background-color: var(--input-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    outline: none;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color-light); /* Açık modda beyaz/açık */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    background-color: #5a2e00;
+    transform: translateY(-2px);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1rem;
+    color: var(--text-color-primary); /* style.css tarafından override edilecek */
+}
+
+.register-link a {
+    color: var(--primary-color); /* style.css tarafından override edilecek */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: var(--secondary-color);
+}
+
+/* Dark mode specific styles for giris-yap.css */
+/* Bu kısımdaki kurallar style.css'teki genel dark mode kuralları tarafından yönetilecek. */
+body.dark-mode .login-section h1,
+body.dark-mode .tab-button:not(.active),
+body.dark-mode .login-form-container h2,
+body.dark-mode .login-form label,
+body.dark-mode .register-link {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .tab-button.active {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color-primary) !important;
+    border-color: var(--primary-color) !important;
+}
+
+body.dark-mode .tab-button:hover:not(.active) {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+body.dark-mode .login-form-container {
+    background-color: var(--background-color-section) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .login-form input[type="email"],
+body.dark-mode .login-form input[type="text"],
+body.dark-mode .login-form input[type="password"] {
+    background-color: var(--input-background) !important;
+    border-color: var(--border-color) !important;
+    color: var(--input-text-color) !important;
+}
+
+/*mobil görünüm*/
+
+@media (max-width: 480px) {
+    .login-section h1 {
+        font-size: 2.2rem;
+    }
+}

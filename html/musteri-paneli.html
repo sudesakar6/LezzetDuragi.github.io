@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzet Durağı - Müşteri Paneli</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/musteri-paneli.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="ana-sayfa.html" class="logo">Lezzet Durağı</a>
+            <button class="hamburger-menu" id="hamburger-menu-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-items-wrapper" id="menu-items-wrapper">
+                <ul class="nav-links">
+                    <li><a href="ana-sayfa.html">Ana Sayfa</a></li>
+                    <li><a href="menu.html">Menü</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="kampanyalar.html">Kampanyalar</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="siparislerim.html">Siparişlerim</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="kaydol.html" class="btn auth-btn" id="kaydol-btn">Kaydol</a>
+                    <a href="giris-yap.html" class="btn auth-btn" id="giris-yap-btn">Giriş Yap</a>
+                    <a href="sepet.html" class="cart-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <div class="profile-icon-container" id="profile-icon-container" style="display: none;">
+                        <i class="fas fa-user-circle profile-icon"></i>
+                        <div class="profile-dropdown" id="profile-dropdown">
+                            <div id="profile-info-content"></div>
+                            <button id="go-to-profile-btn" class="btn go-to-profile-btn">Profile Dön</button>
+                            <button id="logout-btn" class="btn logout-btn">Çıkış Yap</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="customer-panel-section">
+            <h1>Müşteri Paneli</h1>
+            <div class="welcome-message" id="customer-welcome-message"></div>
+
+            <div class="panel-overview-cards">
+                <div class="overview-card">
+                    <h3>Son Siparişleriniz</h3>
+                    <ul id="last-orders-list">
+                        <li>Henüz siparişiniz bulunmamaktadır.</li>
+                    </ul>
+                    <a href="siparislerim.html" class="btn-sm" id="open-order-history">Tüm Siparişleri Gör</a>
+                </div>
+                <div class="overview-card">
+                    <h3>Favorileriniz</h3>
+                    <ul id="favorites-list">
+                        <li>Henüz favori ürününüz bulunmamaktadır.</li>
+                    </ul>
+                    <a href="menu.html" class="btn-sm">Menüyü Keşfet</a> 
+                </div>
+                <div class="overview-card">
+                    <h3>Hesap Bilgileriniz</h3>
+                    <div id="account-details-display">
+                        <p><strong>Ad Soyad:</strong> <span id="display-fullname">Yükleniyor...</span></p>
+                        <p><strong>E-posta:</strong> <span id="display-email">Yükleniyor...</span></p>
+                        <p><strong>Telefon:</strong> <span id="display-phone">Yükleniyor...</span></p>
+                        <p><strong>Doğum Tarihi:</strong> <span id="display-birthdate">Yükleniyor...</span></p>
+                        <p><strong>Cinsiyet:</strong> <span id="display-gender">Yükleniyor...</span></p>
+                    </div>
+                    <a href="#" id="edit-profile-btn" class="btn-sm">Profili Düzenle</a>
+                    <button id="logout-btn-panel" class="btn logout-btn-panel mobile-only-logout">Çıkış Yap</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="iletisim.html" class="footer-link">Bize Ulaşın</a>
+            <a href="menu.html" class="footer-link">Menü</a>
+        </div>
+        <p>© 2025 Lezzet Durağı Kafe. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Menümüz</h2>
+            <div id="modal-menu-categories"></div>
+        </div>
+    </div>
+    <div id="self-service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Self Servis Sipariş</h2>
+
+            <div class="filter-buttons" id="self-service-filter-container"></div>
+            
+            <div id="self-service-menu-categories"></div>
+
+            <div id="barista-selection-container"></div>
+            
+            <div class="modal-cart-summary">
+                <span class="modal-total-label">Sepet Toplamı:</span>
+                <span id="self-service-modal-total" class="modal-total-amount">0.00 TL</span>
+                <button id="place-self-service-order-btn" class="btn checkout-btn">Siparişi Onayla</button>
+            </div>
+        </div>
+    </div>
+    <div id="profile-edit-modal" class="modal">
+        <div class="modal-content profile-edit-modal-content">
+            <span class="close-button" id="close-profile-edit-modal">&times;</span>
+            <h2>Profili Düzenle</h2>
+            <form id="profile-edit-form">
+                <div class="form-group"><label for="editFirstName">Adınız*</label><input type="text" id="editFirstName" name="firstName" required></div>
+                <div class="form-group"><label for="editLastName">Soyadınız*</label><input type="text" id="editLastName" name="lastName" required></div>
+                <div class="form-group"><label for="editEmail">E-posta Adresiniz*</label><input type="email" id="editEmail" name="email" required><small>E-posta adresinizi değiştirirseniz, bazı durumlarda yeniden doğrulama gerekebilir.</small></div>
+                <div class="form-group"><label for="editPhone">Telefon Numaranız*</label><input type="tel" id="editPhone" name="phone" placeholder="Örn: 5xx xxx xx xx" required></div>
+                <div class="form-group"><label for="editBirthDate">Doğum Tarihiniz*</label><input type="date" id="editBirthDate" name="birthDate" required><small id="edit-age-warning" class="warning-text"></small></div>
+                <div class="form-group"><label>Cinsiyet</label><div class="gender-options"><input type="radio" id="editMale" name="editGender" value="Erkek"><label for="editMale">Erkek</label><input type="radio" id="editFemale" name="editGender" value="Kadın"><label for="editFemale">Kadın</label><input type="radio" id="editPreferNotToSay" name="editGender" value="Belirtmek İstemiyorum"><label for="editPreferNotToSay">Belirtmek İstemiyorum</label></div></div>
+                <p class="note">Şifre ve kredi kartı bilgileri bu formdan değiştirilemez.</p>
+                <div class="form-actions"><button type="submit" class="btn">Değişiklikleri Kaydet</button><button type="button" class="btn btn-secondary" id="cancel-profile-edit">İptal</button></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/musteri-paneli.js"></script>
+</body>
+</html>

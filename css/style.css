@@ -1,0 +1,513 @@
+/* css/style.css (Tüm Mobil İyileştirmeler Eklenmiş Nihai Hali) */
+
+:root {
+    --primary-color: #6F4E37; /* Kahve Kahverengisi */
+    --secondary-color: #FFD700; /* Altın Sarısı */
+    --text-color-primary: #333;
+    --text-color-secondary: #555;
+    --text-color-light: #f4f4f4;
+    --background-color-page: #f4f4f4;
+    --background-color-section: #fff;
+    --border-color: #ddd;
+    --input-background: #fff;
+    --input-text-color: #333;
+}
+
+body.dark-mode {
+    --text-color-primary: #f4f4f4;
+    --text-color-secondary: #ccc;
+    --text-color-light: #333; 
+    --background-color-page: #333;
+    --background-color-section: #444;
+    --border-color: #555;
+    --input-background: #555;
+    --input-text-color: #f4f4f4;
+
+    color: var(--text-color-primary) !important;
+    background-color: var(--background-color-page) !important;
+}
+
+body.dark-mode .header,
+body.dark-mode .footer {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .header .navbar .logo,
+body.dark-mode .header .nav-links a,
+body.dark-mode .header .auth-buttons .cart-icon,
+body.dark-mode .header .theme-toggle,
+body.dark-mode .header .profile-icon-container .profile-icon,
+body.dark-mode .header .hamburger-menu {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .auth-buttons .btn {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .auth-buttons .btn:hover {
+    background-color: #e0a800 !important;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+    color: var(--secondary-color) !important;
+}
+
+/* === NAVBAR MASAÜSTÜ STİLLERİ === */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-items-wrapper { 
+    display: flex; 
+    align-items: center;
+    margin-left: 25px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+.nav-links li {
+    margin-right: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #e0a800;
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    margin-left: 10px; 
+    text-decoration: none;
+}
+
+.cart-icon .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 3px 6px;
+}
+
+.profile-icon-container { 
+    position: relative;
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--text-color-light); 
+    font-size: 1.6rem; 
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1005; 
+}
+
+.theme-toggle {
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+
+/* === Genel Diğer Stiller === */
+.footer { background-color: var(--primary-color); color: var(--text-color-light); text-align: center; padding: 1.5rem 0; margin-top: 40px; }
+.footer-content { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
+.footer-link { color: var(--text-color-light); text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease; }
+.footer-link:hover { color: var(--secondary-color); }
+.profile-icon { color: var(--secondary-color); font-size: 2.2rem; vertical-align: middle; }
+.profile-dropdown { display: none; position: absolute; top: 100%; right: 0; background-color: var(--background-color-section); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); min-width: 250px; padding: 15px; z-index: 1001; text-align: left; transform: translateY(10px); opacity: 0; transition: transform 0.2s ease-out, opacity 0.2s ease-out; }
+.profile-icon-container.active .profile-dropdown { display: block; transform: translateY(0); opacity: 1; }
+.profile-dropdown p { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-color-primary); line-height: 1.4; }
+.profile-dropdown p strong { color: var(--primary-color); }
+.profile-dropdown .go-to-profile-btn { display: block; width: 100%; background-color: var(--primary-color); color: var(--text-color-light); padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-size: 1rem; margin-top: 10px; margin-bottom: 10px; text-align: center; transition: background-color 0.3s ease; }
+body.dark-mode .profile-dropdown .go-to-profile-btn { color: var(--text-color-primary); }
+.profile-dropdown .go-to-profile-btn:hover { background-color: #5a2e00; }
+.profile-dropdown .logout-btn { display: block; width: 100%; background-color: #dc3545; color: white; padding: 8px 15px; border-radius: 5px; border: none; cursor: pointer; font-size: 1rem; margin-top: 10px; transition: background-color 0.3s ease; }
+.profile-dropdown .logout-btn:hover { background-color: #c82333; }
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); padding-top: 60px; }
+.modal-content { background-color: var(--background-color-section); margin: 5% auto; padding: 30px; border: 1px solid var(--border-color); border-radius: 10px; width: 80%; max-width: 900px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: var(--text-color-primary); }
+.close-button { color: var(--text-color-primary); position: absolute; top: 15px; right: 25px; font-size: 35px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
+.close-button:hover, .close-button:focus { color: red; text-decoration: none; cursor: pointer; }
+.modal-content h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 30px; text-align: center; }
+.barista-selector-group { margin-bottom: 25px; padding: 15px; background-color: var(--background-color-page); border: 1px solid var(--border-color); border-radius: 8px; text-align: left; }
+.barista-selector-group label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; color: var(--primary-color); }
+body.dark-mode .barista-selector-group label { color: var(--secondary-color); }
+.barista-selector-group select { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid var(--border-color); font-size: 1rem; background-color: var(--input-background); color: var(--input-text-color); }
+
+
+/* === Mobil Uyumluluk Stilleri === */
+@media (max-width: 768px) {
+    .navbar { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        flex-wrap: nowrap; 
+        position: relative; 
+    }
+
+    .navbar .logo {
+        order: 1; 
+        margin-right: auto;
+        font-size: 1.5rem; /* GÜNCELLENDİ */
+    }
+    
+    .theme-toggle {
+        order: 2; 
+        margin-left: 5px; /* GÜNCELLENDİ */
+        font-size: 1.3rem; /* GÜNCELLENDİ */
+    }
+
+    .hamburger-menu {
+        display: block; 
+        order: 3;
+        margin-left: 0; 
+        font-size: 1.4rem; /* GÜNCELLENDİ */
+    }
+
+    .header {
+        padding: 0.5rem 0; /* GÜNCELLENDİ */
+    }
+    
+    main {
+        padding: 0 15px; /* GÜNCELLENDİ */
+    }
+
+    .menu-items-wrapper { 
+        display: none !important;
+    }
+    .menu-items-wrapper.active { 
+        display: flex !important; 
+        flex-direction: column; 
+        align-items: stretch; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0; 
+        width: 100%;
+        background-color: var(--primary-color); 
+        padding: 0; 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border-top: 1px solid var(--secondary-color); 
+        z-index: 999; 
+    }
+    
+    .menu-items-wrapper .nav-links {
+        flex-direction: column; 
+        width: 100%; 
+        margin-right: 0; 
+    }
+
+    .menu-items-wrapper .nav-links li {
+        margin-right: 0; 
+        width: 100%; 
+        text-align: center; 
+    }
+
+    .menu-items-wrapper .nav-links li a {
+        display: block; 
+        padding: 12px 20px; 
+        border-bottom: 1px solid rgba(255,255,255,0.05); 
+        color: var(--text-color-light);
+    }
+
+    .menu-items-wrapper .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-items-wrapper .nav-links a:hover, 
+    .menu-items-wrapper .nav-links a.active { 
+        background-color: rgba(0,0,0,0.1); 
+        color: var(--secondary-color); 
+    }
+
+    .menu-items-wrapper .auth-buttons {
+        flex-direction: column; 
+        width: 100%; 
+        padding: 15px 20px; 
+        gap: 10px;
+        margin-top: 0; 
+        margin-left: 0;
+    }
+
+    .menu-items-wrapper .auth-buttons .btn,
+    .menu-items-wrapper .auth-buttons .cart-icon { 
+        width: 100%; 
+        margin-left: 0; 
+        text-align: center; 
+    }
+    .menu-items-wrapper .auth-buttons .cart-icon { 
+        padding: 8px 15px; 
+        display: inline-block; 
+    }
+
+    .menu-items-wrapper .profile-icon-container {
+        margin-top: 10px;
+        margin-left: 0; 
+        display: flex; 
+        justify-content: center; 
+        width: 100%;
+        padding-bottom: 10px; 
+    }
+    
+    h1 { font-size: 2rem; } 
+    h2 { font-size: 1.6rem; } 
+    h3 { font-size: 1.3rem; }
+
+    .modal-content { 
+        width: 90%;       
+        padding: 20px;    
+        margin-top: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; } 
+    h2 { font-size: 1.4rem; }
+    .btn { 
+        padding: 10px 15px; 
+        font-size: 0.9rem; 
+    }
+    .hero-buttons { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hero-buttons .btn { 
+        display: inline-block; 
+        width: auto; 
+        margin-bottom: 0; 
+    }
+}
+
+/* === Genel Özet Stilleri (Sepet ve Modallar için) === */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color-primary);
+}
+
+.discount-row span:first-child,
+.discount-row span:last-child {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.total-row {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+body.dark-mode .summary-row,
+body.dark-mode .total-row {
+    color: var(--text-color-primary) !important;
+}
+
+body.dark-mode .summary-row {
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .total-row {
+    border-top-color: var(--border-color) !important;
+}
+
+/* === Toast Bildirim Stilleri === */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.toast--success {
+    background-color: #28a745;
+}
+
+.toast--error {
+    background-color: #dc3545;
+}
+
+.toast--info {
+    background-color: #17a2b8;
+}
+
+/* === Self Servis Modalı Kart Stilleri === */
+#self-service-modal .menu-item-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--background-color-page);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+#self-service-modal .menu-item-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+#self-service-modal .menu-item-details-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#self-service-modal .menu-item-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+#self-service-modal .menu-item-card .price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-color-primary);
+}
+
+#self-service-modal .self-service-item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 0;
+}
+
+#self-service-modal .self-service-quantity-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    min-width: 30px;
+    line-height: 1.2;
+    transition: background-color 0.2s;
+}
+#self-service-modal .self-service-quantity-btn:hover {
+    background-color: #5a2e00;
+}
+
+#self-service-modal .self-service-quantity {
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-width: 30px;
+    padding: 0 5px;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-color-primary);
+}
+
+body.dark-mode #self-service-modal .menu-item-card h4,
+body.dark-mode #self-service-modal .menu-item-card .price,
+body.dark-mode #self-service-modal .self-service-quantity {
+    color: var(--text-color-primary);
+}

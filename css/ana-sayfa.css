@@ -1,0 +1,154 @@
+/* css/ana-sayfa.css */
+
+.hero-section {
+    background-color: #8B4513; /* Ana kahverengi arka plan */
+    color: white; 
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-buttons .online-order {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color); 
+}
+
+.hero-buttons .online-order:hover {
+    background-color: #e0a800; 
+}
+
+.hero-buttons .self-service-order {
+    background-color: #c4c4c4; 
+    color: #333; 
+    margin-left: 15px;
+}
+
+.hero-buttons .self-service-order:hover {
+    background-color: #a0a0a0; 
+}
+
+
+.popular-items-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.popular-items-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color); 
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.item-card {
+    background-color: var(--background-color-section); 
+    border: 1px solid var(--border-color); 
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* İçeriği dikeyde ortalamak ve düzenlemek için eklendi */
+    flex-direction: column; /* Elemanları alt alta sırala */
+    justify-content: space-between; /* İçeriği karta yay, butonu alta sabitler */
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.item-card img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.item-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color); 
+    margin-bottom: 5px; /* Fiyattan önce boşluk azaltıldı */
+    flex-grow: 1; /* İsim alanı esnesin (uzun isimlerde) */
+}
+
+/* YENİ EKLENEN FİYAT STİLİ */
+.item-card .price {
+    font-size: 1.1rem; 
+    color: var(--text-color-primary); /* Veya var(--primary-color) */
+    font-weight: bold;
+    margin-bottom: 10px; 
+    margin-top: 5px; 
+}
+
+.item-card .add-to-cart-btn {
+    background-color: #c4c4c4; 
+    color: #333; 
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Butonun kartın en altına yaslanmasını sağlar */
+}
+
+.item-card .add-to-cart-btn:hover {
+    background-color: #a0a0a0; 
+}
+
+/* ana-sayfa.css için mobil uyumluluk eklemeleri */
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 20px; /* Üst ve alt boşluğu azalttık */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Başlık fontunu küçülttük */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-grid {
+        /* Kartların tek sütun olmasını ve kenarlara yapışmamasını garantiler */
+        grid-template-columns: 1fr;
+    }
+}
